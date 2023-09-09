@@ -1,102 +1,334 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  </head>
-  <Header>
-
-    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Marpa</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#Historia">Historia</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Que Hacemos</a>
-       
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Productos
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Productos</a></li>
-            <li><a class="dropdown-item" href="#">Destacados</a></li>
-            <li><a class="dropdown-item" href="#">Lanzamientos</a></li>
-          </ul>
-        </li>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contacto</a>
-      </li>
-      </ul>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Marpa Laser</title>
+</head>
+<body>
+    <!-- SECCIÓN INICIO -->
+     <div class="nav-bottom">
+        <div class="container">
+        <!-- <h1>Marpa</h1> -->
+        <a href="#"><img src="img/logo marpa.svg" alt="Logo Marpa"></a>
+        <nav id="nav" class="">
+            <ul id="links">
+                <!-- <li><a href="#" class="seleccionado">INICIO</a></li> -->
+                <li><a href="#Nosotros">NOSOTROS</a></li>
+                <li><a href="#Que-hacemos">QUE HACEMOS</a></li>
+                <li><a href="#portfolio">PRODUCTOS</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <!-- icono hamburguer menu responsive -->
+        <div id="icon-nav">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <!-- icnos de redes sociales -->
+        <div class="redes">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/marpalaser/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
     </div>
-  </div>
-</nav>
+</div>
+    <header>
+    <div class="nav-top">
+        <div class="container">
+        <ul>
+            <li>
+                <h3 id="fecha"></h3>
+            </li>
+            <li>
+                <h3 id="temperatura-valor"></h3>
+            </li>
+            <li>
+                <h3 id="temperatura-descripcion"></h3>
+            </li>
+            <li>
+                <h3 id="ubicacion"></h3>
+            </li>
+            <li><img id="icono-animado" src="" alt="" height="40" width="40"></li>
+            <li>
+                <h3 id="humedad"></h3>
+            </li>
+            <li>
+                <h3 id="dolar-oficial"></h3>
+            </li>
+            <li>
+                <h3 id="dolar-oficial-venta"></h3>
+            </li>
+            <li>
+                <h3 id="dolar-blue"></h3>
+            </li>
+            <li>
+                <h3 id="dolar-blue-venta"></h3>
+            </li>
 
-</Header>
-  <body>
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="img/imagen_1.JPG" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="img/imagen_2.JPG" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="img/imagen_3.JPG" class="d-block w-100" alt="...">
-        </div>
-        
-       
-        <div class="carousel-item">
-            <img src="img/imagen_4.JPG" class="d-block w-100" alt="...">
-        </div>
-        
-        <div class="carousel-item">
-            <img src="img/imagen_5.JPG" class="d-block w-100" alt="...">
-        </div>
-        
-        <div class="carousel-item">
-            <img src="img/imagen_6.JPG" class="d-block w-100" alt="...">
-        </div>
-
+        </ul>
     </div>
-    <div class="carousel-item">
-      <img src="img/imagen_7.JPG" class="d-block w-100" alt="...">
     </div>
+
+
+
+        <div class="presentacion">
+            <p class="bienvenida">Bienvenidos</p>
+            <h2>Somos <span>Marpa Laser</span>, Articulos en Fibrofacil</h2>
+            <p class="descripcion">Productos pensados y diseñados para que después de celebrar grandes momentos queden
+                recuerdos inolvidables.</p>
+            <a href="#portfolio">Ir a Catalogo</a>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-<section id="Historia">
-<h2>Nosotros</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ad sequi at illum rem qui optio voluptas culpa sunt laudantium eveniet accusamus, magni dolorem dolor odit amet nam exercitationem velit?
-Omnis cumque fugiat, distinctio sit perferendis dolor aperiam ratione sunt. Sunt nesciunt architecto alias aspernatur unde animi eveniet cupiditate tempora veniam odit, dolores neque quasi labore temporibus nostrum odio natus?
-Vel perspiciatis laudantium quis, dolores et iusto porro quaerat suscipit obcaecati rem animi temporibus atque quidem accusamus velit tempore doloremque nobis libero consequuntur nihil perferendis! Quisquam vitae aut tempora illum.
-Alias quasi tempora provident corrupti ipsam neque, nesciunt doloremque deleniti magnam, sequi autem possimus? Aliquid voluptatem debitis at natus quia qui iste vitae labore excepturi ex fugiat beatae, commodi officia.
-Rerum eaque ducimus deserunt non quae! Reiciendis, aspernatur veritatis et officia nemo sapiente vel eveniet! Expedita quaerat officiis ipsa similique! Saepe atque sed provident omnis cumque numquam aut totam ex!
-
-</p>
-</section>
+    </header>
 
 
 
 
+    <!-- SECCIÓN SOBRE NOSOTROS -->
+    <section id="nosotros">
+        <div class="contenedor-foto">
+            <img src="" alt="">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  </body>
-</html>
+        </div>
+
+    </section>
+
+    <!-- SECCIÓN PRODUCTOS -->
+    <section id="portfolio">
+        <h3 class="titulo-seccion">PRODUCTOS</h3>
+        <div class="fila">
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/imagen_2.JPG" alt="">
+                <div class="info">
+                    <h4>Base para tortas</h4>
+                    <p>Bordes calados</p>
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/imagen_3.JPG" alt="">
+                <div class="info">
+                    <h4>Carousel chico</h4>
+                    <p>8 caballos</p>
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/imagen_4.JPG" alt="">
+                <div class="info">
+                    <h4>Puente portachupetines</h4>
+                    <p>Para 24 unidades</p>
+                </div>
+            </div>
+        </div>
+        <div class="fila">
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/imagen_5.JPG" alt="">
+                <div class="info">
+                    <h4>Kiosco candybar</h4>
+                    <p>con 4 divisiones</p>
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/imagen_6.JPG" alt="">
+                <div class="info">
+                    <h4>Vuelta al mundo</h4>
+                    <p>Con 4 carritos</p>
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/imagen_7.JPG" alt="">
+                <div class="info">
+                    <h4>Torre porta cupcakes</h4>
+                    <p>Con 2 niveles</p>
+                </div>
+            </div>
+        </div>
+        <div class="fila">
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/imagen_8.JPG" alt="">
+                <div class="info">
+                    <h4>Tocador con banco</h4>
+                    <p>Sin espejo</p>
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/imagen_9.JPG" alt="">
+                <div class="info">
+                    <h4>Arbol de la vida</h4>
+                    <p>Con corazones</p>
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/imagen_10.JPG" alt="">
+                <div class="info">
+                    <h4>Portarretrato Para Mamá</h4>
+                    <p>Para 4 fotos de 10x15cm</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECCIÓN FORM DE CONTACTO -->
+    <section id="contacto">
+        <h3 class="titulo-seccion">Contactanos</h3>
+        <div class="contenedor-contacto">
+        <div class="imagen-contacto">
+            <img src="img/contacto.jpg" alt="">
+        </div>
+        <div class="contenedor-form">
+            <!-- <form action="https://formspree.io/f/xjvqwvbz" method="post">
+                <div class="fila mitad">
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre Completo" class="input-mitad" required>
+                    <input type="text" name="Email" id="Email" placeholder="Dirección de correo" class="input-mitad" required>
+                </div>
+                <div class="fila">
+                    <input type="text" name="Tema" id="Tema" placeholder="Tema..." class="input-full">
+                </div>
+                <div class="fila">
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Tu mensaje..." class="input-full"></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Enviar Mensaje" class="btn-enviar">
+                </div>
+
+
+            </form> -->
+            <form class="formulario" id="formulario" action="https://formspree.io/f/xjvqwvbz" method="post">
+
+                <!-- Grupo: Nombre -->
+
+                <div class="formulario__grupo" id="grupo__nombre">
+                    <label for="nombre" class="formulario__label">Nombre</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Juan Perez">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El nombre solo puede contener letras.</p>
+                </div>
+
+
+                <!-- Grupo: Correo Electronico -->
+                <div class="formulario__grupo" id="grupo__correo">
+                    <label for="correo" class="formulario__label">Correo Electrónico</label>
+                    <div class="formulario__grupo-input">
+                        <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                </div>
+
+                <!-- Grupo: Teléfono -->
+                <div class="formulario__grupo" id="grupo__telefono">
+                    <label for="telefono" class="formulario__label">Teléfono</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="1112345678">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+                </div>
+
+                <!-- Grupo: mensaje -->
+                <div class="formulario__grupo" id="grupo__mensaje">
+                    <label for="mensaje" class="formulario__label">Mensaje</label>
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Tu mensaje..." class="input-full"></textarea>
+                </div>
+
+                <!-- Grupo: Terminos y Condiciones -->
+                <div class="formulario__grupo" id="grupo__terminos">
+                    <label class="formulario__label">
+                        <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                        Acepto los Terminos y Condiciones
+                    </label>
+                </div>
+
+                <div class="formulario__mensaje" id="formulario__mensaje">
+                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor complete el formulario correctamente. </p>
+                </div>
+
+                <div class="formulario__grupo formulario__grupo-btn-enviar">
+                    <button type="submit" class="formulario__btn">Enviar</button>
+                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Muchas Gracias por su mensaje! nos comunicaremos a la brevedad.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+    </section>
+    <!-- SECCIÓN FOOTER -->
+    <footer>
+        <div class="container">
+        <div class="sec acercade">
+            <h2>MARPA LASER</h2>
+            <p>Fabrica de artículos en fibrofacil, casamiento, 15 años, CandyBar, Comunión, Bautismo, Baby Shower.</p>
+
+        </div>
+        <div class="sec accesos-rapidos">
+            <h2>Categorías</h2>
+            <ul>
+                <li><a href="">CandyBar</a></li>
+                <li><a href="">Deco Hogar</a></li>
+                <li><a href="">Relojes</a></li>
+                <li><a href="">Bandejas</a></li>
+               </ul>
+        </div>
+        <div class="sec accesos-rapidos">
+           <h2>Información</h2>
+           <ul>
+            <li><a href="">Acerca de Nosotros</a>
+            </li>
+            <li><a href="">Puntos de Venta</a>
+            </li>
+            <li><a href="">Atención Al Cliente</a>
+            </li>
+            <li><a href="">Contacto</a>
+            </li>
+            <li><a href="">Políticas de Privacidad</a>
+            </li>
+           </ul>
+        </div>
+        <div class="sec contacto">
+            <h2>Contáctanos</h2>
+            <ul class="info">
+                <li>
+                    <span><i class="fa-brands fa-whatsapp"></i></span><p><a href="tel:+54 9 11 63960968">+54 9 11 6396 0968</a></p>
+                </li>
+                <li>
+                    <span><i class="fa-solid fa-phone"></i></span><p><a href="tel:+54 9 11 21042503">21042503</a></p>
+                </li>
+                <li>
+                    <span><i class="fa-solid fa-envelope"></i></span><p><a href="mailto:info@marpalaser.com.ar">info@marpalaser.com.ar</a></p>
+                </li>
+                <li>
+                    <span><i class="fa-solid fa-location-dot"></i></span><p>Puntos De Venta en CABA y Gran Buenos Aires.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="sec seguinos">
+            <h2>Seguinos</h2>
+            <ul class="redes">
+           <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+           <li><a href="https://www.facebook.com/marpalaser/"><i class="fa-brands fa-facebook"></i></a></li>
+           <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+        </ul>
+        </div>
+    </div>
+    </footer>
+    <div class="copyright-texto">
+     <p>&#169 2023 MARPA Laser. Todos los derechos reservados.</p>
+    </div>
+
+
+
+    <script src="app.js"></script>
+    </body>
+
+    </html>

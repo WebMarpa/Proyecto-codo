@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
 	box-sizing: border-box;
-   font-family: Montserrat;
+   font-family: 'Montserrat';
 }
 
 html{
@@ -479,6 +479,7 @@ footer{
     height: auto;
     padding: 50px 40px;
     background: #333; 
+	
 }
 
 footer .container{    

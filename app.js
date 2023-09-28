@@ -178,29 +178,37 @@ inputs.forEach((input) => {
 	input.addEventListener('blur', validarFormulario);
 });
 
-// formulario.addEventListener('submit', (e) => {
-// 	e.preventDefault();
 
-// 	const terminos = document.getElementById('terminos');
-// 	if(campos.nombre && campos.correo && campos.telefono && terminos.checked ){
-// 		formulario.reset();
-      
+ formulario.addEventListener('submit', (e) => {
 
-	// 	document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-	// 	setTimeout(() => {
-	// 		document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-	// 	},5000);
+    
+ 	 const terminos = document.getElementById('terminos');
+ 	 if(campos.nombre && campos.correo && campos.telefono && terminos.checked ){
+ 	 	
+    
+  
+ 	 	document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+ 	 	setTimeout(() => {
+ 	 		document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+ 	 	},5000);
 
-	// 	document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-	// 		icono.classList.remove('formulario__grupo-correcto');
-	// 	});
-	// } else {
-	 //	document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-	// }
-//}});
+ 	 	document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+ 	 		icono.classList.remove('formulario__grupo-correcto');
+ 	 	});
+ 	 } else {
+    e.preventDefault();
+ 	 	document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+      setTimeout(() => {
+ 	 		document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
+ 	 	},3000);
+ 	 }
+ 
 
-window.onbeforeunload = () => {
-    for(const formulario of document.getElementById('formulario')) {
-      form.reset();
-    }
+ window.onbeforeunload = () => {
+   for(const formulario of document.getElementsByTagName('form')) {
+    formulario.reset();
   }
+ }
+
+})
+

@@ -2,41 +2,54 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <title>Marpa Laser</title>
 </head>
 <body>
-    <!-- SECCIÓN INICIO -->
-     <div class="nav-bottom">
-        <div class="container">
-        <!-- <h1>Marpa</h1> -->
-        <a href="#"><img src="img/logo marpa.svg" alt="Logo Marpa"></a>
-        <nav id="nav" class="">
-            <ul id="links">
-                <!-- <li><a href="#" class="seleccionado">INICIO</a></li> -->
-                <li><a href="#Nosotros">NOSOTROS</a></li>
-                <li><a href="#Que-hacemos">QUE HACEMOS</a></li>
-                <li><a href="#portfolio">PRODUCTOS</a></li>
-                <li><a href="#contacto">CONTACTO</a></li>
-            </ul>
-        </nav>
-        <!-- icono hamburguer menu responsive -->
-        <div id="icon-nav">
-            <i class="fa-solid fa-bars"></i>
+    <!-- SECCIÓN INICIO -->          
+      <section id="inicio">
+        <div class="contenido">
+            <header>
+                <div class="contenido-header">
+                    <a href="#"><img src="img/logo marpa.svg" alt="Logo Marpa"></a>
+                    <nav id="nav" class="">                        
+                        <ul id="links">
+                            <!-- <li><a href="#" class="seleccionado">INICIO</a></li> -->
+                            <li><a href="#Nosotros">NOSOTROS</a></li>
+                            <li><a href="#Que-hacemos">QUE HACEMOS</a></li>
+                            <li><a href="#portfolio">PRODUCTOS</a></li>
+                            <li><a href="#contacto">CONTACTO</a></li>
+                        </ul>
+                    </nav>
+                    <!-- icono hamburguer menu responsive -->
+                    <div id="icon-nav" onclick="responsiveMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <!-- icnos de redes sociales -->
+                    <div class="redes">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/marpalaser/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                
+            </div>
+                </div>
+            </header>
+            <div class="presentacion">
+                <p class="bienvenida">Bienvenidos</p>
+                <h2>Somos <span>Marpa Laser</span>, Articulos en Fibrofacil</h2>
+                <p class="descripcion">Productos pensados y diseñados para que después de celebrar grandes momentos queden
+                    recuerdos inolvidables.</p>
+                <a href="#portfolio">Ir a Catalogo</a>
+            </div>
         </div>
-        <!-- icnos de redes sociales -->
-        <div class="redes">
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.facebook.com/marpalaser/"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-        </div>
-    </div>
-</div>
-    <header>
+      </section>  
+ 
+   
     <div class="nav-top">
         <div class="container">
         <ul>
@@ -75,14 +88,8 @@
 
 
 
-        <div class="presentacion">
-            <p class="bienvenida">Bienvenidos</p>
-            <h2>Somos <span>Marpa Laser</span>, Articulos en Fibrofacil</h2>
-            <p class="descripcion">Productos pensados y diseñados para que después de celebrar grandes momentos queden
-                recuerdos inolvidables.</p>
-            <a href="#portfolio">Ir a Catalogo</a>
-        </div>
-    </header>
+       
+   
 
 
 
@@ -182,8 +189,9 @@
     <section id="contacto">
         <h3 class="titulo-seccion">Contactanos</h3>
         <div class="contenedor-contacto">
-        <div class="imagen-contacto">
-            <img src="img/contacto.jpg" alt="">
+        <div class="google-maps">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.834880384517!2d-58.80506422481156!3d-34.63361275907675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc943e8eb7bd97%3A0x9644c97161a0cf18!2sSoldado%20Marcelo%20Toledo%202539%2C%20B1744%20Moreno%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1696010637271!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
         </div>
         <div class="contenedor-form">
            
@@ -224,7 +232,7 @@
                 <!-- Grupo: mensaje -->
                 <div class="formulario__grupo" id="grupo__mensaje">
                     <label for="mensaje" class="formulario__label">Mensaje</label>
-                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Tu mensaje..." class="input-full"></textarea>
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="3" placeholder="Tu mensaje..." class="input-full"></textarea>
                 </div>
 
                 <!-- Grupo: Terminos y Condiciones -->
@@ -233,14 +241,13 @@
                         <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
                         Acepto los Terminos y Condiciones
                     </label>
-                </div>
-
-                <div class="formulario__mensaje" id="formulario__mensaje">
-                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor complete el formulario correctamente. </p>
-                </div>
+                </div>                
 
                 <div class="formulario__grupo formulario__grupo-btn-enviar">
                     <button type="submit" class="formulario__btn">Enviar</button>
+                    <div class="formulario__mensaje" id="formulario__mensaje">
+                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor complete el formulario correctamente. </p>
+                    </div>
                     <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Muchas Gracias por su mensaje! nos comunicaremos a la brevedad.</p>
                 </div>
             </form>

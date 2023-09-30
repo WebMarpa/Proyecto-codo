@@ -25,7 +25,7 @@ html{
 /* MENU DE NAVEGACION FIJO */
 #inicio .contenido header{
 	background-color: #000;
-	position: sticky;
+	position: fixed;
 	width: 100%;
 	z-index: 9999;
 	top: 0;
@@ -42,7 +42,7 @@ html{
 
 /* Logo barra navegación */
 #inicio .contenido header .contenido-header a img{
-	width: 12vw;
+	width: 15vw;
 	 align-items:center;
 	 filter: invert(23%) sepia(70%) saturate(2639%) hue-rotate(343deg) brightness(85%) contrast(93%);
 	 /* filter: invert(45%) sepia(79%) saturate(1749%) hue-rotate(313deg) brightness(99%) contrast(104%); */
@@ -523,14 +523,14 @@ footer .container .contacto .info li a{
 	.formulario__btn {
 		width: 100%;
 	}
-.redes{
+.redes,.nav-top{
 	display: none;
 }
 
 nav{
 	display: none;
 }
-#icon-nav i{
+#icono-nav i{
 	color: #fff;
 }
 
@@ -552,6 +552,33 @@ nav.responsive ul{
 nav.responsive ul li{
 	margin: 5px 0;
 }	
+#icono-nav{
+	display: block;
+}
+
+#portfolio{
+	padding: 50px 0;
+}
+#portfolio .fila{
+	display: block;
+}
+#portfolio .fila .proyecto{
+	margin: 10px auto;
+}
+#contacto{
+	padding: 50px 15px;
+}
+#contacto .contenedor-contacto{
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 20px;
+	margin: auto;	
+	
+}
+/* Mapa de Google */
+#contacto .google-maps{
+	padding: 10px;
+}
 
 }
 

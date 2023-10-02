@@ -13,18 +13,44 @@ html{
 	scroll-behavior: smooth;
 }
 
-#inicio{
+.banner{
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.banner .fila{
+	width: 100%;
+	margin-top: 57px;
+	display: flex;
+	flex-direction: column;
+	z-index: 100;
+	
+}
+.banner video{
+	position: absolute;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+
+}
+/* #inicio{
 	background-image:
     linear-gradient(to bottom,  rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)),
     url('../img/imagen_1.JPG');
 	background-size: cover;
 	background-position: center center;
-	height: 100vh;	
-}
+	height: 100vh;
+} */
 
 /* MENU DE NAVEGACION FIJO */
 #inicio .contenido header{
-	background-color: #000;
+	background-color: #fff;
 	position: fixed;
 	width: 100%;
 	z-index: 9999;
@@ -35,7 +61,7 @@ html{
 	margin: auto;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;		
+	align-items: center;
 	padding: 10px 20px;
 }
 
@@ -56,7 +82,7 @@ html{
 
 #inicio .contenido header .contenido-header nav ul li a{
 	text-decoration: none;
-	color: #fff;
+	color: #000;
 	margin: 0 12px;
 	font-weight: 400;
 	transition: .5s;
@@ -65,32 +91,38 @@ html{
 #inicio .contenido header .contenido-header ul  a:hover{
 	color: #80ff50;
 }
- 
+
 #inicio .contenido header .contenido-header .redes a{
 	text-decoration: none;
-	color: #fff;
+	color: #000;
 	display: inline-block;
 	margin-left: 10px;
-	transition: .5s;	
+	transition: .5s;
 }
 
 #inicio .contenido header .contenido-header .redes a:hover{
 	color: #80ff50;
 }
+#icono-nav{
+	display: none;
+}
 
 /* BARRA INFORMATIVA */
 .nav-top{
 	display: flex;
-	background-color: #119200;	
-}	
+	background-color: #119200;
+	 margin-top: 100px; 
+	z-index: 100;
+}
 
-.nav-top .container{	
+.nav-top .container{
     max-width: 1100px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	align-content: center;
-	margin: 0 auto;	
+	margin: 0 auto;
+
 }
 .nav-top .container h3{
     margin-left: 10px;
@@ -115,28 +147,29 @@ html{
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	z-index: 100;
 }
 .presentacion .bienvenida{
-	font-size: 16px;
+	font-size: 1vw;
 	margin-bottom: 20px;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 }
 .presentacion h2{
-	font-size: 55px;
+	font-size: 5vw;
 	margin-bottom: 25px;
 	text-align: center;
 }
 .presentacion h2 span{
-	font-size: 25px;
-	color: #000;
+	font-size: 7vw;
+	color: #fff;
 }
 .presentacion .descripcion{
 	max-width: 700px;
 	margin: 25px auto;
 	font-size: 18px;
 	text-align: center;
-} 
+}
 .presentacion a{
 	text-decoration: none;
 	display: inline-block;
@@ -158,13 +191,13 @@ html{
 
 
 /* SECCIÓN PORTAFOLIO */
-#portfolio{
+#productos{
 max-width: 1100px;
 padding: 100px 0;
 margin: auto;
 }
 
-#portfolio .titulo-seccion{
+#productos .titulo-seccion{
 	text-align: center;
 	font-size: 22px;
 	text-transform: uppercase;
@@ -174,13 +207,13 @@ margin: auto;
 	text-decoration-thickness: 5px;
 }
 
-#portfolio .fila{
+#productos .fila{
 	display: flex;
 	justify-content: space-between;
 	margin: 30px 0;
 }
 
-#portfolio .fila .proyecto{
+#productos .fila .proyecto{
 	max-width: 450px;
 	border: 1px solid #000;
 	margin: 0 10px;
@@ -188,18 +221,18 @@ margin: auto;
 	overflow: hidden;
 }
 
-#portfolio .fila .proyecto img{
+#productos .fila .proyecto img{
 	width: 100%;
 	height: 100%;
 	filter: grayscale(1);
 	object-fit: cover;
 	transition: .5s;
 }
-#portfolio .fila .proyecto:hover img{
+#productos .fila .proyecto:hover img{
 filter: grayscale(0);
 }
 
-#portfolio .fila .proyecto .info{
+#productos .fila .proyecto .info{
 	position: absolute;
 	left: 0;
 	background-color: rgba(0,0,0,.8);
@@ -211,7 +244,7 @@ filter: grayscale(0);
 	transition: .5s;
 }
 
-#portfolio .fila .proyecto:hover .info{
+#productos .fila .proyecto:hover .info{
 	opacity: 1;
 	bottom: 0;
 }
@@ -226,8 +259,8 @@ filter: grayscale(0);
 	grid-template-columns: 1fr 1fr;
 	gap: 20px;
 	max-width: 1100px;
-	margin: auto;	
-	
+	margin: auto;
+
 }
 /* Mapa de Google */
 #contacto .google-maps{
@@ -274,14 +307,14 @@ filter: grayscale(0);
 	border-radius: 20px;
 	border: none;
 	border: 1px solid #919191;
-	
+
 }
 
 #contacto .contenedor-form .input-full{
 	width: 100%;
 }
 .formulario__input:focus, .input-full textarea:focus {
-	
+
 	border: 3px solid #0075FF;
 	outline: none;
 	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
@@ -310,7 +343,7 @@ filter: grayscale(0);
 	margin-right: 10px;
 }
 
-.formulario__grupo-terminos, 
+.formulario__grupo-terminos,
 .formulario__mensaje,
 .formulario__grupo-btn-enviar {
 	grid-column: span 2;
@@ -396,10 +429,10 @@ footer{
     width: 100%;
     height: auto;
     padding: 50px 40px;
-    background: #000; 
+    background: #000;
 }
 
-footer .container{    
+footer .container{
    display: grid;
    width: 100%;
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
@@ -458,7 +491,7 @@ position: relative;
 
 footer .container .accesos-rapidos ul li{
     list-style: none;
-    
+
 }
 
 footer .container .accesos-rapidos ul li a{
@@ -479,7 +512,7 @@ footer .container .contacto .info{
 footer .container .contacto .info li{
     display: grid;
     grid-template-columns: 30px 1fr;
-    margin-bottom: 16px;    
+    margin-bottom: 16px;
 }
 
 footer .container .contacto .info li span{
@@ -515,7 +548,7 @@ footer .container .contacto .info li a{
 	.formulario {
 		grid-template-columns: 1fr;
 	}
-	.formulario__grupo-terminos, 
+	.formulario__grupo-terminos,
 	.formulario__mensaje,
 	.formulario__grupo-btn-enviar {
 		grid-column: 1;
@@ -531,12 +564,12 @@ nav{
 	display: none;
 }
 #icono-nav i{
-	color: #fff;
+	color: #000;
 }
 
 nav.responsive{
 	display: block;
-	background-color: #000;
+	background-color: #fff;
 	width: 100%;
 	position: absolute;
 	top: 30px;
@@ -551,18 +584,18 @@ nav.responsive ul{
 
 nav.responsive ul li{
 	margin: 5px 0;
-}	
+}
 #icono-nav{
 	display: block;
 }
 
-#portfolio{
+#productos{
 	padding: 50px 0;
 }
-#portfolio .fila{
+#productos .fila{
 	display: block;
 }
-#portfolio .fila .proyecto{
+#productos .fila .proyecto{
 	margin: 10px auto;
 }
 #contacto{
@@ -572,8 +605,8 @@ nav.responsive ul li{
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 20px;
-	margin: auto;	
-	
+	margin: auto;
+
 }
 /* Mapa de Google */
 #contacto .google-maps{

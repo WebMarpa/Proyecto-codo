@@ -63,12 +63,14 @@ html{
 }
 
 
-/* Logo barra navegación */
-#menu-nav .contenido-nav a img{
-	width: 15vw;
-	 align-items:center;
-	 filter: invert(23%) sepia(70%) saturate(2639%) hue-rotate(343deg) brightness(85%) contrast(93%);
-	 /* filter: invert(45%) sepia(79%) saturate(1749%) hue-rotate(313deg) brightness(99%) contrast(104%); */
+/* Logo MARPA barra menú navegación */
+#menu-nav .contenido-nav .logo svg{
+	fill: red;
+  	width: calc(4em + 10vw);
+	align-items:center;	
+}
+#menu-nav .contenido-nav .logo svg a{
+cursor: pointer;
 }
 
 #menu-nav .contenido-nav nav ul{
@@ -92,7 +94,6 @@ html{
 #menu-nav .contenido-nav ul  a:hover{
 	--p: 100%;
 	color: #fff;
-	/* color: #80ff50; */
 }
 
 #menu-nav .contenido-nav .redes a{
@@ -104,13 +105,13 @@ html{
 }
 
 #menu-nav .contenido-nav .redes a:hover{
-	color: #80ff50;
+	color: #1095c1;
 }
 #icono-nav{
 	display: none;
 }
 
-/* BARRA INFORMATIVA */
+/* Barra info Api del tiempo */
 .nav-info{
 	position: absolute;
 	display: flex;
@@ -145,7 +146,7 @@ html{
 }
 /* SECCIÓN INICIO*/
 
-/* VIDEO BACKGROUND */
+/* Video de fondo */
 .banner{
 	width: 100%;
 	height: 100vh;
@@ -164,6 +165,7 @@ html{
 	pointer-events: none;
 }
 
+/* Capa para oscurecer video de fondo */
 .capa{
 	position: absolute;
    top: 0;
@@ -196,18 +198,45 @@ html{
 	letter-spacing: 0.5vw;
 	text-shadow: 0 0 0.5em #87F, 0 0 0.5em #87F, 0 0 0.5em #87F;
 }
+
+/* logo animado neon */
+.presentacion svg{
+	padding: 20px;
+width: calc(10em + 20vw);
+fill: red;
+    stroke: #fff;	
+    animation-name: logo;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; 
+}
+
+@keyframes logo {
+    0% {
+      filter: drop-shadow(0px 0px 1px #fff)
+      drop-shadow(0px 0px 3px #fff)
+      drop-shadow(0px 0px 7px #ff80b3)
+      drop-shadow(0px 0px 15px #ff4d94)
+      drop-shadow(0px 0px 20px #ff0066);
+    }
+  
+    100% {
+      filter: drop-shadow(0px 0px 3px #fff)
+      drop-shadow(0px 0px 6px #fff)
+      drop-shadow(0px 0px 15px #ff80b3)
+      drop-shadow(0px 0px 30px #ff4d94)
+      drop-shadow(0px 0px 40px #ff0066); 
+    }
+  }
+
 .presentacion h2{
-	font-size: 4vw ;
+	font-size: calc(1em + 4vw);
 	margin-bottom: 25px;
 	text-align: center;
 	text-shadow: 0 0 0.5em #87F, 0 0 0.5em #87F, 0 0 0.5em #87F;
 	
 }
-.presentacion h2 span{
-	font-size: calc(1em + 0.9vw);
-	color: #fff;
-	text-shadow: 0 0 0.5em #87F, 0 0 0.5em #87F, 0 0 0.5em #87F;
-}
+
 .presentacion .descripcion{
 	max-width: 700px;
 	margin: 25px auto;
@@ -237,23 +266,6 @@ html{
 }
 
 /* SECCIÓN NOSOTROS */
-/* #nosotros{
-	display: flex;
-	position: relative;
-	width: 100%;
-	height: 100vh;
-	padding: 0px 0px; 
-
-} */
-
-/* .contenedor-nosotros{
-	width: 100%;
-	height: 100vh;
-	overflow: hidden;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-} */
 
 .contenedor-textos{
 	position: relative;
@@ -276,7 +288,6 @@ html{
 	font-weight:normal;
 	font-style: italic;
 	max-width: 45vw;
-
 }
 
 .texto-nosotros H3{
@@ -293,31 +304,148 @@ html{
 	color: #fff;
 	z-index: 9997;
 }
+/* fin SECCIÓN NOSOTROS */
 
-  /* .container_svg{
-	position: absolute;
+
+
+/* SECCIÓN EQUIPO */
+#equipo{
+	min-height: 100vh;
+	/* background-color: #9dc2eb; */
+	padding: 50px 0px;
+margin-bottom: 30px;
+}
+
+.contenedor-equipo {
+	max-width: 1100px;
 	width: 100%;
-	height: 100vh;
+	margin: auto;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	padding: 50px 0;
+}
+
+.contenedor-equipo .presentacion-equipo p{
+	font-size: calc(0.8em + 0.9vw);
+	max-width: 700px;
+	text-align: center;
+	padding: 20px 0;
+}
+
+.contenedor-equipo .row{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	position: relative;
+	 padding-top: 20px;
+	 top: 10px;
+
+  }
+
+  .miembro {
+	display: flex;
+	max-width:200px;
+	height: 200px;
+	margin: auto;
+}
+
+#equipo .miembro {
+	text-align: center;
+	margin-bottom: 20px;
+	position: relative;
+	border-radius: 50%;
 	overflow: hidden;
+	box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+  }
+  #equipo .miembro img{
+	display: flex;
+	width: 200px;
+	height: 200px;
   }
 
-  .media_img{
-	width: 100%;
-	background-image: url('/img/imagen-nosotros.jpg');
-	background-size: cover;
-	background-position: center;
+
+  #equipo .miembro .miembro-info {
+	opacity: 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	transition: 0.2s;
   }
 
-  .svg_img{
-	width: 100%;
-	height: 100vh;
-  } */
+  #equipo .miembro .miembro-info-content {
+	margin-top: 50px;
+	transition: margin 0.2s;
+  }
+
+  #equipo .miembro:hover .miembro-info {
+	background: rgba(0, 62, 128, 0.7);
+	opacity: 1;
+	transition: 0.4s;
+  }
+
+  #equipo .miembro:hover .miembro-info-content {
+	margin-top: 0;
+	margin-bottom: 0;
+	transition: margin 0.4s;
+  }
+
+  #equipo .miembro h4 {
+	font-weight: 700;
+	margin-bottom: 2px;
+	font-size: 18px;
+	color: #fff;
+  }
+
+  #equipo .miembro span {
+	font-style: italic;
+	display: block;
+	font-size: 13px;
+	color: #fff;
+  }
+
+  #equipo .miembro .social {
+	margin-top: 15px;
+  }
+
+  #equipo .miembro .social a {
+	transition: none;
+	color: #fff;
+  }
+
+  #equipo .miembro .social a:hover {
+	color: #007bff;
+  }
+
+  #equipo .miembro .social i {
+	font-size: 18px;
+	margin: 0 2px;
+  }
 
 
+
+
+  
 /* SECCIÓN PRODUCTOS */
 #productos{
 	max-width: 1100px;
-	padding: 50px 0;
+	padding: 100px 0;
 	margin: auto;
 }
 
@@ -384,7 +512,7 @@ filter: grayscale(0);
 /* SECCIÓN FORMULARIO DE CONTACTO */
 
 #contacto{
-	padding: 80px 15px;
+	padding: 100px 15px;
 
 }
 #contacto .contenedor-contacto{
@@ -833,134 +961,5 @@ footer .acercade,.contacto,.seguinos{
 
 
 
-
-#equipo{
-	min-height: 100vh;
-	/* background-color: #9dc2eb; */
-	padding: 50px 0px;
-margin-bottom: 30px;
-}
-
-.contenedor-equipo {
-	max-width: 1100px;
-	width: 100%;
-	margin: auto;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 20px;
-	padding: 50px 0;
-}
-
-.contenedor-equipo .presentacion-equipo p{
-	font-size: calc(0.8em + 0.9vw);
-	max-width: 700px;
-	text-align: center;
-	padding: 20px 0;
-}
-
-.contenedor-equipo .row{
-	width: 100%;
-	display: grid;
-	grid-template-columns: repeat(4,1fr);
-	position: relative;
-	 padding-top: 20px;
-	 top: 10px;
-
-  }
-
-  .miembro {
-	display: flex;
-	max-width:200px;
-	height: 200px;
-	margin: auto;
-}
-
-#equipo .miembro {
-	text-align: center;
-	margin-bottom: 20px;
-	position: relative;
-	border-radius: 50%;
-	overflow: hidden;
-	box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
-  }
-  #equipo .miembro img{
-	display: flex;
-	width: 200px;
-	height: 200px;
-  }
-
-
-  #equipo .miembro .miembro-info {
-	opacity: 0;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-	position: absolute;
-	bottom: 0;
-	top: 0;
-	left: 0;
-	right: 0;
-	transition: 0.2s;
-  }
-
-  #equipo .miembro .miembro-info-content {
-	margin-top: 50px;
-	transition: margin 0.2s;
-  }
-
-  #equipo .miembro:hover .miembro-info {
-	background: rgba(0, 62, 128, 0.7);
-	opacity: 1;
-	transition: 0.4s;
-  }
-
-  #equipo .miembro:hover .miembro-info-content {
-	margin-top: 0;
-	margin-bottom: 0;
-	transition: margin 0.4s;
-  }
-
-  #equipo .miembro h4 {
-	font-weight: 700;
-	margin-bottom: 2px;
-	font-size: 18px;
-	color: #fff;
-  }
-
-  #equipo .miembro span {
-	font-style: italic;
-	display: block;
-	font-size: 13px;
-	color: #fff;
-  }
-
-  #equipo .miembro .social {
-	margin-top: 15px;
-  }
-
-  #equipo .miembro .social a {
-	transition: none;
-	color: #fff;
-  }
-
-  #equipo .miembro .social a:hover {
-	color: #007bff;
-  }
-
-  #equipo .miembro .social i {
-	font-size: 18px;
-	margin: 0 2px;
-  }
 
 

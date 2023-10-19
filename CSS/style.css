@@ -301,10 +301,10 @@ fill: red;
 	font-size: calc(0.8em + 0.9vw);
 	max-width: 700px;
 	text-align: center;
-	padding: 20px 0;
+	padding: 20px 20px;
 }
 
-.contenedor-equipo .row{
+.contenedor-equipo .fila{
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(4,1fr);
@@ -656,7 +656,7 @@ textarea:focus{
 footer{
 	width: 100%;
     height: auto;
-    padding: 50px 15px 0 15px;
+    padding: 50px 15px 0 20px;
     background: #ecf0f1;
 	font-size: 14px;
 }
@@ -860,7 +860,7 @@ nav.responsive ul li{
 	padding: 10px;
 }
 
-#equipo .contenedor-equipo .row{
+#equipo .contenedor-equipo .fila{
 display: grid;
 	grid-template-columns: 1fr 1fr;
 }
@@ -868,7 +868,7 @@ display: grid;
 
 
 @media screen and (max-width: 600px) {
-	#equipo .contenedor-equipo .row{
+	#equipo .contenedor-equipo .fila{
 		display: grid;
 			grid-template-columns: 1fr;
 		}

@@ -430,69 +430,149 @@ fill: red;
   
 /* SECCIÓN PRODUCTOS */
 #productos{
-	position: relative;
-	max-width: 1100px;
-	padding: 100px 0;
-	margin: auto;
-}
-
-#productos .contenido-productos{
-	max-width: 1100px;
-	width: 100%;
-	margin: auto;
-	position: relative;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 20px;
-	padding: 30px 0;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+}
+.contenedor{
+    position: relative;
+    width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
 
-
-.contenedor-productos{
-	width: 100%;
-	display: grid;
-	grid-template-columns: repeat(4,1fr);
-	gap: 20px;
-	position: relative;
-	justify-items: center;
+.contenedor .card{
+    width: 100%;
+    background: #fff;
 }
 
-#productos .foto-producto{
-
-	max-width: 350px;	
-	border-radius: 20px;
-	position: relative;
-	overflow: hidden;
+.contenedor .card .imgBx{
+    position: relative;
+    width: 100%;
+    height: 310px;
+    overflow: hidden;    
 }
 
-#productos .foto-producto img{
-	width: 100%;
-	height: 100%;
-	/* filter: grayscale(1); */
-	object-fit: cover;
-	transition: .5s;
-}
-/* #productos .foto-producto:hover img{
-filter: grayscale(0);
-} */
-
-#productos .foto-producto .info{
-	position: absolute;
-	left: 0;
-	background-color: rgba(0,0,0,.8);
-	color: #fff;
-	width: 100%;
-	padding: 10px;
-	opacity: 0;
-	bottom: -40px;
-	transition: .5s;
+.contenedor .card .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease-in-out;
+    transform-origin: right;
 }
 
-#productos .foto-producto:hover .info{
-	opacity: 1;
-	bottom: 0;
+.contenedor .card:hover .imgBx img{
+    transform: scale(1.5);
+}
+
+.action{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.action li{
+    position: relative;
+    list-style: none;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    transform: translateX(60px); 
+}
+
+.action li:nth-child(2){
+    transition-delay: 0.15s;
+} 
+
+.action li:nth-child(3){
+    transition-delay: 0.3s;
+} 
+
+.contenedor .card:hover .action li{
+    transform: translateX(0px); 
+}
+
+.action li:hover{
+    background: #ff2020;
+    color: #fff;
+}
+
+.action li span{
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-20px);
+    white-space: nowrap;
+    padding: 4px 6px;
+    background: #fff;
+    color: #333;
+    font-weight: 500;
+    font-size: 12px;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.action li:hover span{
+opacity: 1;
+transform: translateY(-50%) translateX(0px);
+}
+
+.action li span::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -px;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.contenedor .card .contenido{
+    padding: 10px;
+}
+
+.contenedor .card .contenido .nombreProduc h3{
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin: 5px 0;
+}
+
+.contenedor .card .precio{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.contenedor .card .precio h2{
+    font-size: 20px;
+    color: #ff2020;
+    font-weight: 500;
+}
+
+.contenedor .card .precio .fa{
+    color: #ffd513;
+    cursor: pointer;
+}
+
+.contenedor .card .precio .fa.grey{
+    color: #ccc;
 }
 /* fin SECCIÓN PRODUCTOS */
 
@@ -862,10 +942,7 @@ padding: 20px 20px;
 }
 
 
-.contenedor-productos{
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-}
+
 
 #contacto{
 	display: flex;
@@ -929,10 +1006,6 @@ footer .acercade,.contacto,.seguinos{
 			grid-template-columns: 1fr;
 		}
 
-		.contenedor-productos{
-			display: grid;
-			grid-template-columns: 1fr;
-		}
 }
 
 @media screen and (max-width: 270px) {

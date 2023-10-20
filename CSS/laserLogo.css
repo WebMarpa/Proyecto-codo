@@ -4,6 +4,7 @@
     width: calc(4em+10vw);
     height: 4px;
     background: #fff;;
+    z-index: 3;
     }
     
     .laser-logo::before{

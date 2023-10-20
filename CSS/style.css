@@ -64,36 +64,52 @@ html{
 
 
 /* Logo MARPA barra menú navegación */
-#menu-nav .contenido-nav .logo svg{
+#menu-nav .contenido-nav .logo{
 	fill: red;
   	width: calc(4em + 10vw);
 	align-items:center;	
 }
-#menu-nav .contenido-nav .logo svg a{
-cursor: pointer;
-}
 
-#menu-nav .contenido-nav nav ul{
+
+#menu-nav .contenido-nav #nav ul{
+	/* width: 600px; */
+	margin: auto;	
 	list-style: none;
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 }
 
-
-#menu-nav .contenido-nav nav ul li a{
+#menu-nav .contenido-nav nav ul  a{
 	text-decoration: none;
 	color: #000;
 	margin: 0 12px;
 	font-size: 18px;
-	font-weight: 400;
-	background: linear-gradient(#1095c1 0 0) var(--p, 0) / var(--p, 0) no-repeat;
-	transition: .4s;
-	 background-position : 0px 0px;
+	font-weight: 400;	
+	transition: 0.4s;
+	padding: 5px 15px;
+	position: relative;
+    overflow: hidden;
 }
 
-#menu-nav .contenido-nav ul  a:hover{
-	--p: 100%;
-	color: #fff;
+#menu-nav .contenido-nav nav ul  a::after{
+    content: ""; 
+    position: absolute;
+	bottom: 0; left: 0;
+    width: 0%; height: 3px;
+    background: #87F;    
+    transition: all 0.4s;
+}
+
+#menu-nav .contenido-nav nav ul  a:hover::after{
+   width: 100%;
+}
+
+
+#menu-nav .contenido-nav ul a:hover{
+	color: #87F;
+	text-shadow: -1px -1px 10px #87F,
+    1px 1px 10px #87F;
 }
 
 #menu-nav .contenido-nav .redes a{
@@ -105,7 +121,8 @@ cursor: pointer;
 }
 
 #menu-nav .contenido-nav .redes a:hover{
-	color: #1095c1;
+	color: #87F;;
+	filter:drop-shadow(-1px -1px 10px #87F);
 }
 #icono-nav{
 	display: none;
@@ -167,13 +184,13 @@ cursor: pointer;
 
 /* Capa para oscurecer video de fondo */
 .capa{
-	position: absolute;
+   position: absolute;
    top: 0;
    left: 0;
    width: 100%;
    height: auto;
    background: #1c1c1d;
-	opacity: 0.9;
+   opacity: 0.9;
    mix-blend-mode:overlay;
    overflow: hidden;
 
@@ -789,7 +806,10 @@ footer .container .contacto .info li a{
 /* SECCIÓN RESPONSIVE  */
 
 /* ----- -----  Mediaqueries ----- ----- */
-@media screen and (max-width: 830px) {
+
+
+
+@media screen and (max-width: 800px) {
 	.formulario {
 		grid-template-columns: 1fr;
 	}
@@ -801,6 +821,7 @@ footer .container .contacto .info li a{
 	.formulario__btn {
 		width: 100%;
 	}
+	
 .redes,.nav-info{
 	display: none;
 }
@@ -808,29 +829,32 @@ footer .container .contacto .info li a{
 padding: 20px 20px;
 }
 
-nav{
+#nav{
 	display: none;
 }
 #icono-nav i{
+	font-size: 24px;
 	color: #000;
 }
 
-nav.responsive{
+#nav.responsive{
 	display: block;
 	background-color: #fff;
 	width: 100%;
 	position: absolute;
+	justify-content: center;
 	top: 60px;
 	left: 0;
 	padding: 10px 0;
 }
 
-nav.responsive ul{
+#nav.responsive ul{
 	display: block !important;
 	text-align: center;
 }
 
-nav.responsive ul li{
+#nav.responsive ul li{
+	padding: 3px 0;
 	margin: 5px 0;
 }
 #icono-nav{
@@ -866,21 +890,7 @@ display: grid;
 }
 }
 
-
-@media screen and (max-width: 600px) {
-	#equipo .contenedor-equipo .fila{
-		display: grid;
-			grid-template-columns: 1fr;
-		}
-
-		.contenedor-productos{
-			display: grid;
-			grid-template-columns: 1fr;
-		}
-}
-
-
-@media only screen and (max-width: 992px) and (min-width: 768px){
+@media only screen and (max-width: 991px) and (min-width: 768px){
 
 	footer .container{
 		display: grid;
@@ -894,9 +904,7 @@ display: grid;
 	footer .seguinos{
 		grid-column: span 2;
 	} 
-
 }
-
 
 @media only screen and (max-width: 767px) and (min-width: 270px){
 
@@ -913,7 +921,18 @@ footer .container{
 footer .acercade,.contacto,.seguinos{
 	grid-column: span 2;
 } 
+}
 
+@media screen and (max-width: 600px) {
+	#equipo .contenedor-equipo .fila{
+		display: grid;
+			grid-template-columns: 1fr;
+		}
+
+		.contenedor-productos{
+			display: grid;
+			grid-template-columns: 1fr;
+		}
 }
 
 @media screen and (max-width: 270px) {

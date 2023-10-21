@@ -27,7 +27,7 @@ Estamos trabajando incansablemente para llevar a Marpa Láser al siguiente nivel
 
 ## Acceso al Proyecto
 
-Puedes acceder a nuestro proyecto en [https://marpa.netlify.app/]().
+Puedes acceder a nuestro proyecto en (https://marpa.netlify.app/).
 
 ## Tecnologías Utilizadas
 

@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" 
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU">
     <link rel="stylesheet" href="CSS/normalize.css">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/laserLogo.css">
@@ -18,6 +19,7 @@
 
 
     <!-- Librerias CSS -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
@@ -25,6 +27,49 @@
 </head>
 
 <body>
+
+      <!-- Formulario Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-label="iniciar sesión" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title "><span class="fa-solid  fa-user fa-2x" style=" vertical-align: sub;"></span>
+            <span class="my-text">Iniciar sesión</span>
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm" class="g-3 needs-validation" novalidate autocomplete="off">
+            <div class="form-floating mb-3">
+              <label for="inputEmail" class="form-label"><i class="fa-solid fa-envelope"></i>Correo Electrónico</label>
+              <input type="email" class="form-control" id="inputEmail" placeholder="ejemplo@test.com" required>
+              <div class="invalid-feedback">
+                Por favor, ingrese correo electrónico.
+              </div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <label for="inputPassword" class="form-label"><i class="fa-solid fa-lock"></i>Contraseña</label>
+              <input type="password" class="form-control " id="inputPassword" placeholder="Contraseña" required>
+              <div class="invalid-feedback">
+                Por favor, ingrese contraseña.
+              </div>
+            </div>
+
+            <div id="alertId" class="alert alert-danger hide" role="alert">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <span>Por favor, verifique sus credenciales</span>
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="return login()">Aceptar</button>
+            <button id="close-modal-btn" type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close"
+              onclick="clear()">Cerrar</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
     
     <!-- BARRA DE MENU FIJA -->
     <div id="menu-nav">
@@ -47,7 +92,21 @@
             <div id="icono-nav" onclick="responsiveMenu()">
                 <i class="fa-solid fa-bars"></i>
             </div>
+            
+            <!-- Botón Login/Logout --> 
+        </ul>
+        <ul role="none" class="navbar-nav btn">
+          <li role="none" class="nav-link button-btn">
+            <!-- Botón trigger modal Login -->
+            <button id="login-link" class=" btn btn-success" style="color: #fff;" data-toggle="modal"
+              data-target="#loginModal">
+              Login</button>            
+          </li>
+        </ul>
+            
+
             <!-- iconos redes sociales -->
+
             <div class="redes">
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.facebook.com/marpalaser/"><i class="fa-brands fa-facebook"></i></a>
@@ -356,10 +415,10 @@
         <h3 class="titulo-seccion">Productos Destacados</h3>
     <div id="cont-productos">
         
-        <div class="contenedor">
-            <div class=" wow fadeInLeft card">
+        <div id="app" class="contenedor">
+            <div class=" wow fadeInLeft card" v-for="producto in productos" :key="producto.id">
                 <div class="imgBx">
-                    <img src="img/1.JPG">
+                    <img :src="producto.imagen" :alt="producto.nombre">
                     <ul class="action">
                         <li>
                             <i class="fa fa-heart" aria-hidden="true"></i>
@@ -377,264 +436,18 @@
                 </div>
                 <div class="contenido">
                     <div class="nombreProduc">
-                        <h3>Combo CANDY-BAR</h3>
+                        <h3>{{producto.nombre}}</h3>
                     </div>
                     <div class="precio">
-                        <h2>$7.500</h2>
+                        <h2>${{producto.precio}}</h2>
                         <div class="ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa grey fa-star" aria-hidden="true"></i>
+                           <h2>Stock:{{producto.stock}}</h2>
                         </div>
                     </div>
                 </div>
             </div>
     
-            <div class=" wow fadeInUp card">
-                <div class="imgBx">
-                    <img src="img/2.JPG">
-                    <ul class="action">
-                        <li>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <span>Agregar a Favoritos</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            <span>Agregar a Carrito</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-eye" aria-hidden="true"></i>
-                            <span>Ver Detalles</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="contenido">
-                    <div class="nombreProduc">
-                        <h3>Base para Tortas 30cm</h3>
-                    </div>
-                    <div class="precio">
-                        <h2>$1.800</h2>
-                        <div class="ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa grey fa-star" aria-hidden="true"></i>
-                            <i class="fa grey fa-star" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <div class=" wow fadeInDown card">
-                <div class="imgBx">
-                    <img src="img/3.JPG">
-                    <ul class="action">
-                        <li>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <span>Agregar a Favoritos</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            <span>Agregar a Carrito</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-eye" aria-hidden="true"></i>
-                            <span>Ver Detalles</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="contenido">
-                    <div class="nombreProduc">
-                        <h3>Calesita 8 caballos</h3>
-                    </div>
-                    <div class="precio">
-                        <h2>$4.300</h2>
-                        <div class="ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa grey fa-star" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <div class=" wow fadeInRight card">
-                <div class="imgBx">
-                    <img src="img/4.JPG">
-                    <ul class="action">
-                        <li>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <span>Agregar a Favoritos</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            <span>Agregar a Carrito</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-eye" aria-hidden="true"></i>
-                            <span>Ver Detalles</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="contenido">
-                    <div class="nombreProduc">
-                        <h3>Puente Porta Chupetines</h3>
-                    </div>
-                    <div class="precio">
-                        <h2>$4.500</h2>
-                        <div class="ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="wow fadeInLeft card">
-                <div class="imgBx">
-                    <img src="img/5.JPG">
-                    <ul class="action">
-                        <li>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <span>Agregar a Favoritos</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            <span>Agregar a Carrito</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-eye" aria-hidden="true"></i>
-                            <span>Ver Detalles</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="contenido">
-                    <div class="nombreProduc">
-                        <h3>Kiosco Carro Golosinero</h3>
-                    </div>
-                    <div class="precio">
-                        <h2>$4.700</h2>
-                        <div class="ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa grey fa-star" aria-hidden="true"></i>
-                            <i class="fa grey fa-star" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="wow fadeInDown card">
-                <div class="imgBx">
-                    <img src="img/6.JPG">
-                    <ul class="action">
-                        <li>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <span>Agregar a Favoritos</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            <span>Agregar a Carrito</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-eye" aria-hidden="true"></i>
-                            <span>Ver Detalles</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="contenido">
-                    <div class="nombreProduc">
-                        <h3>Vuelta al Mundo 4 Carritos</h3>
-                    </div>
-                    <div class="precio">
-                        <h2>$5.700</h2>
-                        <div class="ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa grey fa-star" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="wow fadeInUp card">
-                <div class="imgBx">
-                    <img src="img/7.JPG">
-                    <ul class="action">
-                        <li>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <span>Agregar a Favoritos</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            <span>Agregar a Carrito</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-eye" aria-hidden="true"></i>
-                            <span>Ver Detalles</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="contenido">
-                    <div class="nombreProduc">
-                        <h3>Porta Cupcakes 2 Pisos</h3>
-                    </div>
-                    <div class="precio">
-                        <h2>$4.500</h2>
-                        <div class="ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa grey fa-star" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="wow fadeInRight card">
-                <div class="imgBx">
-                    <img src="img/8.JPG">
-                    <ul class="action">
-                        <li>
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <span>Agregar a Favoritos</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            <span>Agregar a Carrito</span>
-                        </li>
-                        <li>
-                            <i class="fa fa-eye" aria-hidden="true"></i>
-                            <span>Ver Detalles</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="contenido">
-                    <div class="nombreProduc">
-                        <h3>Carrito Pochoclero</h3>
-                    </div>
-                    <div class="precio">
-                        <h2>$2.500</h2>
-                        <div class="ratings">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa grey fa-star" aria-hidden="true"></i>
-                            <i class="fa grey fa-star" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
     
         </div>
     </div>
@@ -794,8 +607,14 @@
 
 
     <!-- librerias JavaScript -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Link de VUE-->
+    <script src="lib/jquery-3.6.1.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="/JS/app.js"></script>
+    <script src="/JS/login.js"></script>
+    <script src="/js/productos.js"></script>
+
 </body>
 
 </html>

@@ -10,7 +10,7 @@ nombre:"",
 imagen:"",
 stock:0,
 precio:0,
-url:'http://marpa.pythonanywhere.com/productos/'+id,
+url:'https://marpa.pythonanywhere.com/productos/'+id,
 }
 },
 methods: {

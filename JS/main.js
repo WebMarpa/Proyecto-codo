@@ -13,25 +13,15 @@ document.getElementById("header").innerHTML=` <div id="menu-nav">
             <li><a href="#productos">Productos</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
-    </nav>
+    </nav> 
+    <!-- Botón Logout-->
+    <a class="boton-logout" href="index.html">Cerrar Sesión</a>
+
     <!-- icono hamburguer menu responsive -->
     <div id="icono-nav" onclick="responsiveMenu()">
         <i class="fa-solid fa-bars"></i>
     </div>
     
-    <!-- Botón Login/Logout --> 
-</ul>
-<ul role="none" class="navbar-nav btn">
-  <li role="none" class="nav-link button-btn">
-   
-
-    <!-- Botón Logout-->
-    <a id="logout-link" class="btn btn-primary custom" href="index.html">Logout</a>
-    
-  </li>
-</ul>
-    
-
     <!-- iconos redes sociales -->
 
     <div class="redes">

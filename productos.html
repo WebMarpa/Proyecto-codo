@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="es">
 <head>
-<title>Title</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -11,7 +10,11 @@ crossorigin="anonymous"> -->
 integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
 crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="stylesheet" href="CSS/style.css">
+<link rel="stylesheet" href="CSS/tabla_producto.css">
 <link rel="stylesheet" href="CSS/laserLogo.css">
+<title>Marpa Laser</title>
+ <!-- Favicons -->
+ <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body>
 <header id="header">
@@ -19,9 +22,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
 </header>
 <main>
 <div id="app" class="container">
-<h1>Productos</h1>
+<h1>Panel de control</h1>
 <br>
-<a class="btn btn-primary" href="producto_nuevo.html">Nuevo</a>
+<a class="nuevo" href="producto_nuevo.html">Agregar Articulo</a>
 <br><br>
 <div v-if="error">
 <p>Lo sentimos , ........</p>
@@ -55,11 +58,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
 <img width="60" :src="producto.imagen" :alt="producto.nombre">
 </td>
 <td>
-<a class="btn btn-primary" :href="'producto_update.html?id='+ producto.id" >Editar</a>
+<a class="boton" :href="'producto_update.html?id='+ producto.id" >Editar</a>
 
 </td>
 <td>
-    <button type="button" class="btn btn-danger" v-on:click="eliminar(producto.id)" >Eliminar</button>
+    <button type="button" class="Eliminar" v-on:click="eliminar(producto.id)" >Eliminar</button>
 </td>
 </tr>
 </tbody>
@@ -72,13 +75,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer">
 <footer>
 <!-- place footer here -->
 </footer>
-<!--Link de Bootstrap-->
-<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
-crossorigin="anonymous"></script> -->
+
 <script src="./js/main.js"></script>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Link de VUE-->
 <script src="./js/productos.js"></script>

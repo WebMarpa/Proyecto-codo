@@ -1,46 +1,48 @@
-function login(){
-    var username = document.getElementById('inputEmail').value;
-    var password = document.getElementById('inputPassword').value;
-  
-    if (!username || !password)
-    return;
-  
-    if(!(username == "Admin@test.com" && password == "123456")){
-      document.getElementById('alertId').classList.remove('hide');
-      setTimeout(() => {
-        const box = document.getElementById('alertId');
-            
-        
-        // Limpia el Formulario
-        clear();
-  
+document.addEventListener('DOMContentLoaded', function () {
+    var abrirModalBtn = document.getElementById('abrirModalBtn');
+    var cerrarModalBtn = document.getElementById('cerrarModalBtn');
+    var miModal = document.getElementById('miModal');
+    var formularioLogin = document.getElementById('formularioLogin');
+
+    abrirModalBtn.addEventListener('click', function () {
+        miModal.style.display = 'block';
+    });
+
+    cerrarModalBtn.addEventListener('click', function () {
+        miModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function (event) {
+        if (event.target === miModal) {
+            miModal.style.display = 'none';
+        }
+    });
+
+     // Cierra el modal al presionar la tecla "Esc"
+     window.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && miModal.style.display === 'block') {
+            miModal.style.display = 'none';
+        }
+    });
+
+
+    
        
-  
-      }, 5000); // tiempo en milisegundos
-      return false;
-    } else {
-         // Redirecciona a dashboard.html después de iniciar sesión correctamente
-    window.location.href = './productos.html';
-      var closeButton = document.getElementById('close-modal-btn');
-      closeButton.click();
-    }
-    // Para evitar submit
-    return false;
-  }
-   
-    //Manejador de evento de cierre modal
-    var loginModal = document.getElementById('loginModal')
-  loginModal.addEventListener('hidden.bs.modal',function (event) {
-  clear();
-  })
-  
-  function clear(){
-  document.getElementById('inputEmail').value='';
-  document.getElementById('inputPassword').value='';
-  document.getElementById('loginForm').reset();
-  document.getElementsByClassName('needs-validation')[0].classList.remove('was-validated');
-  }
- 
-  
-  
- 
+    
+    
+
+    formularioLogin.addEventListener('submit', function (event) {
+        event.preventDefault();
+        //  validación y redireccionamiento
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        if (email === 'admin@test.com' && password === '123456') {
+            alert('Inicio de sesión exitoso');
+            window.location.href = 'productos.html'; // Redireccionar a otra página
+            miModal.style.display = 'none';
+        } else {
+            alert('Credenciales incorrectas. Por favor, inténtalo de nuevo.');
+        }
+    });
+});

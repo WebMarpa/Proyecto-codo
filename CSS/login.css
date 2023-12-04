@@ -61,9 +61,9 @@
     list-style: none;
     background-color: #4CAF50;
     color: white;
-    padding: 5px;
+    padding: 5px 1vw;
     border: none;
-    border-radius: 5px;
+    border-radius: 2vw;
     cursor: pointer;
 }
 

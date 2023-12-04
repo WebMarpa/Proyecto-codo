@@ -15,24 +15,27 @@ document.getElementById("header").innerHTML=` <div id="menu-nav">
         </ul>
     </nav> 
     <!-- Botón Logout-->
-    <a class="boton-logout" href="index.html">Cerrar Sesión</a>
-
-    <!-- icono hamburguer menu responsive -->
-    <div id="icono-nav" onclick="responsiveMenu()">
-        <i class="fa-solid fa-bars"></i>
-    </div>
+    <button class="boton-logout" onclick="cerrarSesion()">Cerrar Sesión</button>
+        
     
-    <!-- iconos redes sociales -->
-
-    <div class="redes">
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.facebook.com/marpalaser/"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-
-    </div>
 </div>
 </div>
-`,
-document.getElementById("foo").innerHTML=` <div class="copyright-texto">
-<p>&#169 2023 MARPA Laser. Todos los derechos reservados.</p>
-</div> `;
+`
+// Verificar si el usuario está autenticado al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    var usuarioAutenticado = localStorage.getItem('usuarioAutenticado');
+
+    if (!usuarioAutenticado || usuarioAutenticado !== 'true') {
+        // Redirigir a la página de inicio de sesión si no está autenticado
+        alert('Acceso no autorizado. Inicia sesión.');
+        window.location.href = 'index.html';
+    }
+});
+
+  // Función para cerrar sesión
+  function cerrarSesion() {
+    // Limpiar información de sesión en el Local Storage
+    localStorage.removeItem('usuarioAutenticado');
+    alert('Sesión cerrada. Redirigiendo a la página de inicio de sesión.');
+    window.location.href = 'index.html';
+}

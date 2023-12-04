@@ -51,7 +51,7 @@ tr:hover td{
     
 }
 
-.boton{    
+.Editar{    
     color: #f2f2f2;
     margin-right: 2vh;
     background-color: #4CAF50; /* Color de fondo */
@@ -66,25 +66,11 @@ tr:hover td{
     cursor: pointer; /* Cambia el cursor al pasar el ratón */
 }
 
-.boton-logout{
-    color: #f2f2f2;
-    margin-right: 2vh;
-    background-color: #534caf; /* Color de fondo */
-    color: white; /* Color del texto */
-    padding: 0.5vw 3vh; /* Relleno interno */
-    border: none; /* Quita el borde */
-    border-radius: 2vw; /* Borde redondeado */
-    text-align: center; /* Alineación del texto */
-    text-decoration: none; /* Quita el subrayado predeterminado */
-    display: inline-block; /* Mostrar como bloque en línea */
-    font-size: 14px; /* Tamaño de fuente */
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
-}
 
 .nuevo{
     color: #f2f2f2;
     margin-right: 2vh;
-    background-color: #001F3F50; /* Color de fondo */
+    background-color: #007bff; /* Color de fondo */
     color: white; /* Color del texto */
     padding: 0.5vw 3vh; /* Relleno interno */
     border: none; /* Quita el borde */

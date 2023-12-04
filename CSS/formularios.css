@@ -36,7 +36,7 @@ input:focus {
 }
 
 /* Estilo para el botón */
-button {
+.Grabar {
     width: 100%;
     padding: 10px;
     background-color: #28a745; /* Color verde */
@@ -52,7 +52,7 @@ button {
 }
 
 /* Estilo al pasar el ratón sobre el botón */
-button:hover {
+.Grabar:hover {
     background-color: #218838; /* Cambia el color al pasar el ratón */
 }
 

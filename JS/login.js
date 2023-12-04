@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var password = document.getElementById('password').value;
 
         if (email === 'admin@test.com' && password === '123456') {
+            localStorage.setItem('usuarioAutenticado', 'true');
             alert('Inicio de sesión exitoso');
             window.location.href = 'productos.html'; // Redireccionar a otra página
             miModal.style.display = 'none';
@@ -46,3 +47,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+ 

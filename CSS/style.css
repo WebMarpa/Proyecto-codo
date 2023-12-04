@@ -48,11 +48,19 @@ html{
 	
   }
 
-  #login-link {
-    line-height: 15px;
-    border: 2px solid rgba(103, 192, 103, 0.75);
-    width: 85px;
-    border-radius: 30px;
+  #abrirModalBtn{
+	color: #f2f2f2;
+    margin-right: 2vh;
+    background-color: rgba(103, 192, 103, 0.75);/* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 0.5vw; /* Relleno interno */
+    border: none; /* Quita el borde */
+    border-radius: 2vw; /* Borde redondeado */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Quita el subrayado predeterminado */
+    display: inline-block; /* Mostrar como bloque en línea */
+    font-size: 14px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
     transition: all 0.3s ease 0s;
   }
   
@@ -62,6 +70,21 @@ html{
     border: 2px solid rgb(103, 192, 103, 0.75);
   }
   
+  .boton-logout{
+    color: #f2f2f2;
+    margin-right: 2vh;
+    background-color: #534caf; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 0.5vw; /* Relleno interno */
+    border: none; /* Quita el borde */
+    border-radius: 2vw; /* Borde redondeado */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Quita el subrayado predeterminado */
+    display: inline-block; /* Mostrar como bloque en línea */
+    font-size: 14px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+}
+
   #logout-link {
     color: deepskyblue;
     line-height: 15px;

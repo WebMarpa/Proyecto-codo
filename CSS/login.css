@@ -36,11 +36,11 @@
 }
 
 /* Estilos para el formulario */
-form {
+#formularioLogin {
     margin-top: 20px;
 }
 
-label {
+#formularioLogin label {
     display: block;
     text-align: left;
     margin-bottom: 5px;
@@ -48,7 +48,7 @@ label {
     font-weight: bold;
 }
 
-input {
+#formularioLogin input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -57,11 +57,11 @@ input {
     box-sizing: border-box;
 }
 
-button {
+#formularioLogin button, #abrirModalBtn {
     list-style: none;
     background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
+    padding: 5px;
     border: none;
     border-radius: 5px;
     cursor: pointer;

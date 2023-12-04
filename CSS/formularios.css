@@ -1,0 +1,65 @@
+form {
+ 
+    background-color: aliceblue;
+    margin: 10px auto;
+    width: 90%; /* Hacer el formulario más ancho en pantallas más grandes */
+    max-width: 400px; /* Ancho máximo del formulario */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondos */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Estilos para los campos de entrada */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease; /* Transición suave en el color del borde */
+}
+
+/* Estilo al enfocar (focus) en los campos de entrada */
+input:focus {
+    border: 3px solid #0075FF;
+	outline: none; /* Color azul al enfocar */
+}
+
+/* Estilo para el botón */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745; /* Color verde */
+    color: #fff; /* Texto blanco */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave en el color de fondo */
+}
+
+.imagen{
+    margin-bottom: 10px;
+}
+
+/* Estilo al pasar el ratón sobre el botón */
+button:hover {
+    background-color: #218838; /* Cambia el color al pasar el ratón */
+}
+
+
+/* Estilos para pantallas más pequeñas (por ejemplo, teléfonos) */
+@media screen and (max-width: 600px) {
+    form {
+        width: 100%;
+    }
+}
